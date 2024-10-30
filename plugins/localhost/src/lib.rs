@@ -63,7 +63,7 @@ impl Builder {
         self.host = Some(host.as_ref().to_string());
         self
     }
-    
+
     pub fn on_request<F: Fn(&Request, &mut Response) + Send + Sync + 'static>(
         mut self,
         f: F,
