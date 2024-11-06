@@ -59,8 +59,9 @@ impl Builder {
         }
     }
 
-    pub fn host<H: AsRef<str>>(mut self, host: H) -> Self {
-        self.host = Some(host.as_ref().to_string());
+    // Change the host the plugin binds to. Defaults to `localhost`.
+    pub fn host<H: Into<String>>(mut self, host: H) -> Self {
+        self.host = Some(host.into());
         self
     }
 
